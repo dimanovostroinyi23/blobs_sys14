@@ -1,0 +1,90 @@
+{
+  "name": "generator-tokend-module",
+  "version": "0.0.0",
+  "description": "Generate microservice skeleton for TokenD system",
+  "homepage": "https://tokend.io",
+  "author": {
+    "name": "Anton",
+    "email": "antonymartynov@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "tokend",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-xo": "^0.25.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^1.2.0",
+    "jest": "^26.6.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.19.1",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "standard",
+      "prettier"
+    ],
+    "env": {
+      "jest/globals": true,
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "jest",
+      "standard",
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "fix": "eslint --fix .",
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "tokend/generator-tokend-module",
+  "license": "MIT"
+}
